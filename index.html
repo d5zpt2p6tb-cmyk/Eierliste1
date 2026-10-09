@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Eierliste</title>
+  <meta name="description" content="Wöchentliche Eierverkäufe, Kunden und Bezahlstatus – offline auf dem Handy.">
+
+  <!-- Farbe der Statusleiste passend zu Hell-/Dunkelmodus -->
+  <meta name="theme-color" content="#faf6ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15130d" media="(prefers-color-scheme: dark)">
+
+  <!-- Installierbar (Android/Chrome) und "Zum Home-Bildschirm" (iPhone/Safari) -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Eierliste">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="top">
+    <h1 id="title">Eierliste</h1>
+  </header>
+
+  <main id="app" tabindex="-1" aria-live="polite"></main>
+
+  <nav id="tabs" aria-label="Hauptmenü">
+    <a href="#/" data-tab="start"><span class="ic" aria-hidden="true">🏠</span>Start</a>
+    <a href="#/woche" data-tab="woche"><span class="ic" aria-hidden="true">🥚</span>Woche</a>
+    <a href="#/offen" data-tab="offen"><span class="ic" aria-hidden="true">💶</span>Offen</a>
+    <a href="#/verlauf" data-tab="verlauf"><span class="ic" aria-hidden="true">📈</span>Verlauf</a>
+    <a href="#/mehr" data-tab="mehr"><span class="ic" aria-hidden="true">⚙️</span>Mehr</a>
+  </nav>
+
+  <div id="overlay-root"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <noscript><p style="padding:16px">Die Eierliste braucht JavaScript.</p></noscript>
+
+  <script src="logic.js"></script>
+  <script src="db.js"></script>
+  <script src="minichart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
